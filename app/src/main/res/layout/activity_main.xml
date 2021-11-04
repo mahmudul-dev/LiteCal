@@ -13,14 +13,13 @@
         android:layout_height="wrap_content"
         android:gravity="right|bottom"
         android:paddingRight="20dp"
-        android:text="000"
+
         android:textColor="@color/white"
         android:textSize="56dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textOutput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <TextView
@@ -29,11 +28,11 @@
         android:layout_height="wrap_content"
         android:gravity="right|bottom"
         android:paddingRight="20dp"
-        android:text="000"
+
         android:textColor="@color/outputColor"
-        android:textSize="76dp"
+        android:textSize="80dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/textInput" />
+        app:layout_constraintBottom_toTopOf="@+id/buttons_palete" />
 
 
 
@@ -92,10 +91,10 @@
 
 
                 <ImageView
-                    android:id="@+id/btn_end_bracket"
+                    android:id="@+id/btn_module"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:background="@drawable/btn_end_bracket"
+                    android:background="@drawable/btn_module"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginTop="15dp"
@@ -128,6 +127,7 @@
                 >
 
                 <ImageView
+                    android:id="@+id/btn_7"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_7"
@@ -138,6 +138,7 @@
 
 
                 <ImageView
+                    android:id="@+id/btn_8"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_8"
@@ -148,6 +149,7 @@
 
 
                 <ImageView
+                    android:id="@+id/btn_9"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_9"
@@ -158,6 +160,7 @@
 
 
                 <ImageView
+                    android:id="@+id/btn_multiplication"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_multiplication"
@@ -183,6 +186,7 @@
                 >
 
                 <ImageView
+                    android:id="@+id/btn_4"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_4"
@@ -193,6 +197,7 @@
 
 
                 <ImageView
+                    android:id="@+id/btn_5"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_5"
@@ -203,6 +208,7 @@
 
 
                 <ImageView
+                    android:id="@+id/btn_6"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_6"
@@ -213,6 +219,7 @@
 
 
                 <ImageView
+                    android:id="@+id/btn_minus"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_minus"
@@ -237,6 +244,7 @@
                 >
 
                 <ImageView
+                    android:id="@+id/btn_1"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_1"
@@ -247,6 +255,7 @@
 
 
                 <ImageView
+                    android:id="@+id/btn_2"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_2"
@@ -257,6 +266,7 @@
 
 
                 <ImageView
+                    android:id="@+id/btn_3"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_3"
@@ -266,6 +276,7 @@
                     />
 
                 <ImageView
+                    android:id="@+id/btn_plus"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_plus"
@@ -289,26 +300,45 @@
                 >
 
                 <ImageView
+                    android:id="@+id/btn_end_bracket"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/btn_end_bracket"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/btn_0"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_0"
-                    android:layout_margin="18dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
                     />
 
 
                 <ImageView
+                    android:id="@+id/btn_dot"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_dot"
-                    android:layout_margin="18dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
                     />
 
 
                 <ImageView
+                    android:id="@+id/btn_equal"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:background="@drawable/btn_equal"
-                    android:layout_margin="18dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
                     />
 
 
