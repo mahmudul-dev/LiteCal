@@ -4,13 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.internal.ContextUtils;
+
+import org.mozilla.javascript.Context;
+import org.mozilla.javascript.Scriptable;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView textInput, textOutput;
-    ImageView btn_ac, btn_start_bracket, btn_end_bracket, btn_module, btn_divide, btn_7, btn_8, btn_9, btn_6, btn_5, btn_4, btn_3, btn_2, btn_1, btn_0, btn_equal, btn_multiplication, btn_minus, btn_plus, btn_dot;
+    Button btn_ac, btn_c, btn_module, btn_divide, btn_7, btn_8, btn_9, btn_6, btn_5, btn_4, btn_3, btn_2, btn_1, btn_0, btn_equal, btn_multiplication, btn_minus, btn_plus, btn_dot;
     String data;
 
     @Override
@@ -35,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
         btn_9 = findViewById(R.id.btn_9);
         btn_ac = findViewById(R.id.btn_ac);
         btn_equal = findViewById(R.id.btn_equal);
-        btn_start_bracket = findViewById(R.id.btn_start_bracket);
-        btn_end_bracket = findViewById(R.id.btn_end_bracket);
+        btn_c = findViewById(R.id.btn_c);
         btn_minus = findViewById(R.id.btn_minus);
         btn_plus = findViewById(R.id.btn_plus);
         btn_multiplication = findViewById(R.id.btn_multiplication);
@@ -146,6 +152,105 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 data = textInput.getText().toString();
                 textInput.setText(data+"9");
+            }
+        });
+
+
+        btn_dot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data = textInput.getText().toString();
+                textInput.setText(data+".");
+            }
+        });
+
+
+        btn_divide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data = textInput.getText().toString();
+                textInput.setText(data+"÷");
+            }
+        });
+
+
+        btn_ac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textInput.setText(null);
+                textOutput.setText(null);
+            }
+        });
+
+
+        btn_c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              data = textInput.getText().toString();
+              data = data.substring(0,data.length()-1);
+              textInput.setText(data);
+            }
+        });
+
+
+        btn_plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data = textInput.getText().toString();
+                textInput.setText(data+"+");
+            }
+        });
+
+
+        btn_minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data = textInput.getText().toString();
+                textInput.setText(data+"-");
+            }
+        });
+
+
+
+        btn_module.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data = textInput.getText().toString();
+                textInput.setText(data+"%");
+            }
+        });
+
+
+
+
+        btn_multiplication.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data = textInput.getText().toString();
+                textInput.setText(data+"×");
+            }
+        });
+
+
+        btn_equal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data=textInput.getText().toString();
+                Toast.makeText(getApplicationContext(), ""+data, Toast.LENGTH_SHORT).show();
+            data=data.replaceAll("×","*");
+            data=data.replaceAll("%","/100");
+            data=data.replaceAll("÷","/");
+
+                Context rhino=Context.enter();
+                rhino.setOptimizationLevel(-1);
+
+                String finalResult = "";
+
+                Scriptable scriptable= rhino.initStandardObjects();
+                finalResult=rhino.evaluateString(scriptable,data,"Javascript",1,null).toString();
+
+                textOutput.setText(finalResult);
+
             }
         });
 
