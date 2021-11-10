@@ -8,47 +8,66 @@
     android:background="@color/primaryColor"
     >
 
-
-    <ScrollView
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
-        android:layout_height="290dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnPalate"
+        android:layout_height="145dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-
-            >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textInput"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
+                android:layout_height="match_parent"
+                android:text="000"
+                android:gravity="bottom"
                 android:textColor="@color/white"
-                android:textSize="56sp"
+                android:textSize="60sp"
                 android:textStyle="bold"
 
                 />
 
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/btnPalate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            >
+
+
             <TextView
                 android:id="@+id/textOutput"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:text="000"
                 android:textColor="@color/outputColor"
                 android:textSize="80sp"
                 android:textStyle="bold"
 
                 />
 
+
         </LinearLayout>
-    </ScrollView>
+    </HorizontalScrollView>
+
 
     <LinearLayout
         android:id="@+id/btnPalate"
